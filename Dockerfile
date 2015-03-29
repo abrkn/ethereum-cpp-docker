@@ -10,6 +10,7 @@ RUN \
     wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add - && \
     echo "deb http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.5 main\ndeb-src http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.5 main" > \
         /etc/apt/sources.list.d/llvm-trusty.list && \
+    apt-get update && \
     apt-get install -qy build-essential g++-4.8 git cmake libboost-all-dev libcurl4-openssl-dev wget \
         automake unzip libgmp-dev libtool libleveldb-dev yasm libminiupnpc-dev libreadline-dev scons \
         libjsoncpp-dev libargtable2-dev \
