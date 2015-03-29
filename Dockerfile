@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN \
     apt-get update && \
-    apt-get install -qy software-properties-common && \
+    apt-get install -qy software-properties-common wget && \
     add-apt-repository ppa:ethereum/ethereum && \
     add-apt-repository ppa:ethereum/ethereum-dev && \
     wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add - && \
