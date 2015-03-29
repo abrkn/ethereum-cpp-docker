@@ -19,20 +19,22 @@ RUN \
         libcryptopp-dev libjson-rpc-cpp-dev \
         llvm-3.5 libedit-dev && \
     mkdir -p /usr/lib/llvm-3.5/share/llvm && ln -s /usr/share/llvm-3.5/cmake /usr/lib/llvm-3.5/share/llvm/cmake && \
-    curl -L https://github.com/ethereum/cpp-ethereum/tarball/585962347b | tar xvz && \
+    curl -L https://github.com/ethereum/cpp-ethereum/tarball/585962347b | tar xvz
     cd ethereum-cpp-ethereum-5859623 && \
-    mkdir -p build && \
+    mkdir -p build
+    cd build && \
     cmake .. -DHEADLESS=1 -DLLVM_DIR=/usr/share/llvm-3.5/cmake -DEVMJIT=1 && \
     make -j $(cat /proc/cpuinfo | grep processor | wc -l) && \
     make install && \
     ldconfig && \
+    cd ../.. && \
     rm -rf ethereum-cpp-ethereum-* && \
     apt-get remove -y software-properties-common wget automake unzip \
         build-essential g++-4.8 git cmake && \
-    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 CMD "/usr/local/bin/eth"
 
 # TODO: Consider apt-fast
 # TODO: Static baseimage version. Which?
-
