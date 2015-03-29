@@ -19,9 +19,9 @@ RUN \
         libcryptopp-dev libjson-rpc-cpp-dev \
         llvm-3.5 libedit-dev && \
     mkdir -p /usr/lib/llvm-3.5/share/llvm && ln -s /usr/share/llvm-3.5/cmake /usr/lib/llvm-3.5/share/llvm/cmake && \
-    curl -L https://github.com/ethereum/cpp-ethereum/tarball/585962347b | tar xvz
+    curl -L https://github.com/ethereum/cpp-ethereum/tarball/585962347b | tar xvz && \
     cd ethereum-cpp-ethereum-5859623 && \
-    mkdir -p build
+    mkdir -p build && \
     cd build && \
     cmake .. -DHEADLESS=1 -DLLVM_DIR=/usr/share/llvm-3.5/cmake -DEVMJIT=1 && \
     make -j $(cat /proc/cpuinfo | grep processor | wc -l) && \
