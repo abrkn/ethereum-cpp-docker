@@ -29,7 +29,6 @@ RUN make -j $(cat /proc/cpuinfo | grep processor | wc -l)
 RUN make install
 RUN ldconfig
 RUN rm -rf cpp-ether
-RUN
 RUN apt-get remove -y software-properties-common wget
 RUN apt-get remove -y build-essential g++-4.8 git cmake
 RUN apt-get remove -y  libboost-all-dev libcurl4-openssl-dev automake unzip
