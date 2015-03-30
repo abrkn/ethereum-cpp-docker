@@ -35,5 +35,3 @@ RUN \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 CMD "/usr/local/bin/eth"
-
-# TODO: Consider apt-fast
