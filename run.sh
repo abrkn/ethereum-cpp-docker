@@ -20,8 +20,6 @@ sudo docker run \
     --volume $data_path:/data \
     --publish 808$1:8080 \
     $link \
-    $net \
-    --net host \
     abrkn/ethereum-cpp:076f787 \
     eth \
     --db-path /data \
