@@ -1,4 +1,4 @@
-FROM phusion/baseimage
+FROM phusion/baseimage:0.9.9
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -37,4 +37,3 @@ RUN \
 CMD "/usr/local/bin/eth"
 
 # TODO: Consider apt-fast
-# TODO: Static baseimage version. Which?
