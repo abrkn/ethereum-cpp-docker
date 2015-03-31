@@ -1,7 +1,7 @@
 FROM phusion/baseimage
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV REF 076f787
+ENV REF df0ed63
 
 RUN \
     apt-get update && \
